@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "Steel Ball Run \u2013 The Chain",
+  "version": "1.0.0",
+  "description": "Detects Steel Ball Run / JoJo episodes (under 30 min) and plays The Chain over the outro with fade in/out.",
+  "permissions": ["storage", "unlimitedStorage"],
+  "action": {
+    "default_title": "The Chain",
+    "default_popup": "popup.html"
+  },
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_idle",
+      "all_frames": true,
+      "match_about_blank": true
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["the-chain.mp3"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}

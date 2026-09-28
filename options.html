@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>The Chain &mdash; Settings</title>
+<style>
+  :root { color-scheme: light dark; }
+  body { max-width: 520px; margin: 32px auto; font: 15px system-ui, sans-serif; padding: 0 16px; }
+  h1 { font-size: 20px; }
+  h2 { font-size: 16px; margin-top: 28px; }
+  p, .hint { opacity: .8; font-size: 13px; }
+  input[type=text] { padding: 6px; width: 90px; }
+  button { padding: 6px 12px; margin-right: 6px; cursor: pointer; }
+  #msg { margin-top: 12px; font-size: 13px; min-height: 18px; }
+</style>
+</head>
+<body>
+  <h1>The Chain &mdash; Settings</h1>
+
+  <h2>Custom music</h2>
+  <p>Replaces the default track. It plays from the outro time, fades in and out like the default,
+     and is cut off at the default track's length (<span id="cap"></span>).</p>
+  <p>Current: <b id="current">Default (The Chain)</b></p>
+  <input id="file" type="file" accept="audio/*">
+  <button id="reset">Use default</button>
+
+  <h2>Outro start time</h2>
+  <p class="hint">Default 21:37.45. The video must be longer than this and shorter than 30 minutes.</p>
+  <input id="time" type="text" placeholder="21:37.45">
+  <button id="saveTime">Save</button>
+
+  <div id="msg"></div>
+  <script src="options.js"></script>
+</body>
+</html>
